@@ -1,9 +1,8 @@
 from fastapi import FastAPI
-from src.api import query
+
 from fastapi.responses import RedirectResponse
-
-
-# TODO: Pre-load the dataset
+from src.api import query
+from src.retriever import retriever
 
 app = FastAPI(
     title="ML API",
@@ -11,8 +10,12 @@ app = FastAPI(
     version="1.0.0",
 )
 
+@app.on_event("startup")
+def preload_data():
+    retriever.load_data()
+
 @app.get("/")
 async def redirect_to_docs():
     return RedirectResponse(url="/docs")
-
+    
 app.include_router(query.router)

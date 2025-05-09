@@ -1,1 +1,1 @@
-Copy the file set here from https://www.kaggle.com/datasets/radek1/sci-or-not-sci-hypthesis-testing-pack?resource=download
+Copy the file set here from https://www.kaggle.com/datasets/radek1/sci-or-not-sci-hypthesis-testing-pack?resource=downloads
